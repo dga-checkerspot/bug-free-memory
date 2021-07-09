@@ -48,12 +48,12 @@ process kallisto {
   path cdnaindex from index
   
   output:
-  file "${reads.baseName}.zip" into quantdir
+  file "${pair_id}_mapped.zip" into quantdir
   
   
   """
-  kallisto quant -i $cdnaindex "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq.gz" -b 1000 -o ${reads.baseName}
-  zip ${reads.baseName}
+  kallisto quant -i $cdnaindex "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq.gz" -b 1000 -o "${pair_id}_mapped"
+  zip "${pair_id}_mapped"
   
   """
   
