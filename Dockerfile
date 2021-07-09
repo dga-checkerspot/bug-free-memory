@@ -18,7 +18,14 @@ RUN conda config --add channels defaults
 RUN conda config --add channels bioconda
 RUN conda config --add channels conda-forge
 
+RUN conda install -c conda-forge -y awscli
+
 RUN conda install -c anaconda git 
+
+RUN conda install augustus
+
+RUN git clone https://github.com/Gaius-Augustus/Augustus.git 
+
 RUN mkdir -p /opt/augustus/scripts/ \
 	&& mv ./Augustus/scripts/* /opt/augustus/scripts/ \
 	&& mv /Augustus/docs/tutorial2018/BRAKER_v2.0.4+/*.pl /opt/augustus/scripts/ \
@@ -29,4 +36,3 @@ ENV PATH="/opt/augustus/scripts:${PATH}"
 
 RUN conda install kallisto
 
-RUN conda update --all
