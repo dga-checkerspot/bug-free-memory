@@ -17,7 +17,7 @@ process Augustus {
 	
 	"""
 	augustus --species=chlorella --cds=on $genom > aug.gtf
-  getAnnoFasta.pl aug.gtf
+	getAnnoFasta.pl aug.gtf
 	
 	"""
 	
