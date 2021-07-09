@@ -16,7 +16,7 @@ process Augustus {
   file 'aug.codingseq' into cdnas
 	
 	"""
-	augustus --species=chlorella --cds=on $genom > aug.gtf
+	augustus --species=chlorella --cds=on --softmasking=0 $genom > aug.gtf
 	getAnnoFasta.pl aug.gtf
 	
 	"""
