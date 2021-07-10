@@ -41,19 +41,19 @@ process kallistoindex {
 
 process kallisto {
 
-	memory '4G'
+  memory '4G'
 
-	input:
-	tuple val(pair_id), path(reads) from read_pairs_ch
+  input:
+  tuple val(pair_id), path(reads) from read_pairs_ch
   path cdnaindex from index
   
   output:
-  file "${pair_id}_mapped.zip" into quantdir
+  file "${pair_id}_mapped.tar.gz" into quantdir
   
   
   """
   kallisto quant -i $cdnaindex "${pair_id}_R1_001.fastq.gz" "${pair_id}_R2_001.fastq.gz" -b 1000 -o "${pair_id}_mapped"
-  zip "${pair_id}_mapped"
+  tar -zcvf "${pair_id}_mapped.tar.gz" "${pair_id}_mapped"
   
   """
   
