@@ -1,4 +1,4 @@
-params.reads='s3://algaetranscriptomics/CHK17*_R{1,2}_001.fastq.gz'
+params.reads='s3://algaetranscriptomics/CHK*_R{1,2}_001.fastq.gz'
 geno='s3://hic.genome/PGA_scaffolds.fa'
 
 Channel
