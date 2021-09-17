@@ -1,5 +1,5 @@
 params.reads='s3://algaetranscriptomics/CHK*_R{1,2}_001.fastq.gz'
-geno='s3://hic.genome/PGA_scaffolds.fa'
+geno='s3://hic.genome/PGA_scaffolds.fasta'
 
 Channel
 	.fromFilePairs(params.reads)
