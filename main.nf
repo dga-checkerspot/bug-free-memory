@@ -1,6 +1,6 @@
 params.reads='s3://algaetranscriptomics/CHK*_R{1,2}_001.fastq.gz'
 geno='s3://hic.genome/PGA_scaffolds.fasta'
-cdnas='s3://algaetranscriptomics/CHK17_CDS.fa'
+cdnas='s3://algaetranscriptomics/CHK1_comparison.fasta'
 
 Channel
 	.fromFilePairs(params.reads)
